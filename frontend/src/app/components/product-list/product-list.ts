@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product, ProductService } from '../../services/product';
 
 @Component({
   selector: 'app-product-list',
-  imports: [ CommonModule],
+  imports: [CommonModule],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
-export class ProductList {
+export class ProductList implements OnInit {
   products: Product[] = [];
   loading = true;
   error = false;
