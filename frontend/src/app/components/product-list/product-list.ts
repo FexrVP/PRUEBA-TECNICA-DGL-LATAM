@@ -15,17 +15,19 @@ export class ProductList implements OnInit {
 
   constructor(private productService: ProductService) {}
 
-  ngOnInit(): void {
-    this.productService.getProducts().subscribe({
-      next: (data) => {
-        this.products = data;
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error(err);
-        this.error = true;
-        this.loading = false;
-      }
-    });
-  }
+ngOnInit(): void {
+  console.log('ngOnInit ejecutado');
+  this.productService.getProducts().subscribe({
+    next: (data) => {
+      console.log('Datos recibidos:', data);
+      this.products = data;
+      this.loading = false;
+    },
+    error: (err) => {
+      console.error('Error en suscripción:', err);
+      this.error = true;
+      this.loading = false;
+    }
+  });
+}
 }
