@@ -42,33 +42,10 @@ Abre http://localhost:4200. Asegúrate de que el backend esté corriendo y que l
 Puedes levantar ambos servicios con Docker Compose:
 
 docker-compose up --build
+
 Backend: http://localhost:3000
 
 Frontend: http://localhost:8080
-
-### Estructura del proyecto
-
-catalogo-precios/
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── services/
-│   ├── utils/
-│   ├── server.js
-│   ├── Dockerfile
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/
-│   │   │   ├── services/
-│   │   │   └── app.config.ts
-│   │   ├── environments/
-│   │   └── ...
-│   ├── Dockerfile
-│   └── angular.json
-├── docker-compose.yml
-└── README.md
 
 ## Despliegue
 
