@@ -2,6 +2,7 @@
 <div *ngIf="loading">Cargando productos...</div>
 <div *ngIf="error">Error al cargar los datos. Por favor, intenta más tarde.</div>
 <table *ngIf="!loading && !error" border="1" cellpadding="8">
+    <div>Estado: loading={{ loading }}, error={{ error }}, productos={{ products.length }}</div>
     <thead>
         <tr>
             <th>ID</th>
