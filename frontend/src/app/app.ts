@@ -5,6 +5,7 @@ import { ProductList } from './components/product-list/product-list';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [FormsModule, CommonModule, ProductList],
   templateUrl: './app.html',
   styleUrl: './app.css'
