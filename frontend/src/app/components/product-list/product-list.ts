@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core'; // ← añade ChangeDetectorRef
 import { Product, ProductService } from '../../services/product';
 
 @Component({
@@ -13,21 +13,26 @@ export class ProductList implements OnInit {
   loading = true;
   error = false;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
-ngOnInit(): void {
-  console.log('ngOnInit ejecutado');
-  this.productService.getProducts().subscribe({
-    next: (data) => {
-      console.log('Datos recibidos:', data);
-      this.products = data;
-      this.loading = false;
-    },
-    error: (err) => {
-      console.error('Error en suscripción:', err);
-      this.error = true;
-      this.loading = false;
-    }
-  });
-}
+  ngOnInit(): void {
+    console.log('ngOnInit ejecutado');
+    this.productService.getProducts().subscribe({
+      next: (data) => {
+        console.log('Datos recibidos:', data);
+        this.products = data;
+        this.loading = false;
+        this.cdr.detectChanges();
+      },
+      error: (err) => {
+        console.error('Error en suscripción:', err);
+        this.error = true;
+        this.loading = false;
+        this.cdr.detectChanges();
+      }
+    });
+  }
 }
