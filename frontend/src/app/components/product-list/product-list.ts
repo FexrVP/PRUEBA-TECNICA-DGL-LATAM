@@ -19,10 +19,8 @@ export class ProductList implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('ngOnInit ejecutado');
     this.productService.getProducts().subscribe({
       next: (data) => {
-        console.log('Datos recibidos:', data);
         this.products = data;
         this.loading = false;
         this.cdr.detectChanges();
