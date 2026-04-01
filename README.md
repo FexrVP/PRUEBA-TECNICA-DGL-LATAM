@@ -20,7 +20,7 @@ Este proyecto consta de un microservicio backend (Node.js + Express) que consume
 - npm
 - Angular CLI
 
-## 🔧 Instalación y ejecución local
+## Instalación y ejecución local
 
 ### Backend
 
