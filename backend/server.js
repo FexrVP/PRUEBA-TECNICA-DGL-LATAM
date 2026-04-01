@@ -19,3 +19,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
     console.log(`Backend corriendo en http://localhost:${PORT}`);
 });
+
+app.get('/', (req, res) => {
+  res.send('API de catálogo funcionando. Usar /api/products para obtener los datos.');
+});
